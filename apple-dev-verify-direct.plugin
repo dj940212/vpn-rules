@@ -1,8 +1,27 @@
-#!name=Apple开发证书直连
-#!desc=将苹果开发证书校验域名设为直连，避免常开 VPN 时真机 Debug 提示「无法验证 App」
+#!name=Apple开发与TF上传直连
+#!desc=放行真机开发证书校验、App Store Connect、TestFlight 上传及 iCloud/CloudKit 域名直连
 #!author=dj940212
 
 [Rule]
+# 真机开发证书在线校验
 DOMAIN,ppq.apple.com,DIRECT
 DOMAIN-SUFFIX,ocsp.apple.com,DIRECT
 DOMAIN-SUFFIX,ocsp2.apple.com,DIRECT
+
+# App Store Connect & TestFlight 上传 (Transporter / altool / Xcode)
+DOMAIN,appstoreconnect.apple.com,DIRECT
+DOMAIN,api.appstoreconnect.apple.com,DIRECT
+DOMAIN,itunesconnect.apple.com,DIRECT
+DOMAIN,contentdelivery.itunes.apple.com,DIRECT
+DOMAIN,upload.itunes.apple.com,DIRECT
+DOMAIN,developerservices2.apple.com,DIRECT
+DOMAIN,idmsa.apple.com,DIRECT
+DOMAIN,gsa.apple.com,DIRECT
+DOMAIN-SUFFIX,mzstatic.com,DIRECT
+DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+DOMAIN-SUFFIX,aaplimg.com,DIRECT
+
+# iCloud & CloudKit
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,icloud-content.com,DIRECT
+DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
