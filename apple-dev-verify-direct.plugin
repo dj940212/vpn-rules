@@ -1,0 +1,8 @@
+#!name=Apple开发证书直连
+#!desc=将苹果开发证书校验域名设为直连，避免常开 VPN 时真机 Debug 提示「无法验证 App」
+#!author=dj940212
+
+[Rule]
+DOMAIN,ppq.apple.com,DIRECT
+DOMAIN-SUFFIX,ocsp.apple.com,DIRECT
+DOMAIN-SUFFIX,ocsp2.apple.com,DIRECT
